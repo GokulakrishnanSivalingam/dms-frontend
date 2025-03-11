@@ -39,9 +39,9 @@ const About = () => {
       <main className="about-content">
         <section className="about-hero">
           <div className="container">
-            <h1>About DMS</h1>
+            <h1>About CRISIZ</h1>
             <p className="hero-description">
-              Disaster Management System (DMS) is a comprehensive platform designed to provide immediate assistance and vital information during emergencies.
+              Disaster Management System (CRISIZ) is a comprehensive platform designed to provide immediate assistance and vital information during emergencies.
             </p>
           </div>
         </section>

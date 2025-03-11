@@ -33,7 +33,7 @@ const Header = () => {
     <header className="header">
       <div className="logo" onClick={() => handleNavigation('/')}>
         <div className="logo-text">
-          D<span>MS</span>
+          C<span>RISIZ</span>
         </div>
       </div>
       
