@@ -1,0 +1,155 @@
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0033a0, #00a5cf);
+  padding: 2rem;
+}
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 5px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  animation: slideUp 0.5s ease-out;
+}
+
+.auth-content {
+  text-align: center;
+}
+
+.auth-content h2 {
+  color: #0033a0;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.auth-content p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group input {
+  width: 90%;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #0033a0;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 51, 160, 0.1);
+}
+
+.auth-button {
+  background: #0033a0;
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.auth-button:hover {
+  background: #002277;
+  transform: translateY(-2px);
+}
+
+.auth-links {
+  margin-top: 2rem;
+}
+
+.auth-links a {
+  color: #0033a0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.auth-links a:hover {
+  color: #00a5cf;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 1.5rem;
+  }
+
+  .auth-content h2 {
+    font-size: 1.75rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .form-group input {
+    width: 90%;
+    padding: 7px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  .auth-button {
+    background: #0033a0;
+    color: white;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 2px;
+  }
+}
+
+.error-message {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Add phone number specific styling */
+input[type="tel"] {
+  letter-spacing: 1px;
+}
+
+input:invalid {
+  border-color: #ff5252;
+}
+
+input:invalid:focus {
+  border-color: #ff5252;
+  box-shadow: 0 0 0 2px rgba(255, 82, 82, 0.2);
+} 

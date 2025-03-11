@@ -1,0 +1,182 @@
+.live-track {
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.live-track-content {
+    padding-top: 60px;
+}
+
+.track-section {
+    padding: 2rem 0;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.track-section h1 {
+    text-align: center;
+    color: #0033a0;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+/* Tabs */
+.track-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tab-button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    background: white;
+    color: #0033a0;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tab-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color:white;
+}
+
+.tab-button.active {
+    background: #0033a0;
+    color: white;
+}
+
+/* Map Container */
+.map-container {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+}
+
+/* Forecast Styles */
+.forecast-container {
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.current-conditions {
+    margin-bottom: 2rem;
+}
+
+.current-weather-card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 15px;
+}
+
+.weather-icon img {
+    width: 100px;
+    height: 100px;
+}
+
+.weather-info .temperature {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #0033a0;
+    margin: 0;
+}
+
+.weather-info .description {
+    font-size: 1.2rem;
+    color: #666;
+    text-transform: capitalize;
+    margin: 0.5rem 0;
+}
+
+.weather-info .details {
+    display: flex;
+    gap: 1.5rem;
+    color: #666;
+}
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.forecast-card {
+    text-align: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.forecast-card:hover {
+    transform: translateY(-5px);
+}
+
+.forecast-card .time {
+    font-weight: 500;
+    color: #0033a0;
+    margin-bottom: 0.5rem;
+}
+
+.forecast-card img {
+    width: 50px;
+    height: 50px;
+    margin: 0.5rem 0;
+}
+
+.forecast-card .temp {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.forecast-card .desc {
+    color: #666;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+}
+
+.loading {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .track-tabs {
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+
+    .current-weather-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .weather-info .details {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .forecast-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+} 
