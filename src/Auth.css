@@ -140,7 +140,7 @@
   text-align: center;
 }
 
-/* Add phone number specific styling */
+
 input[type="tel"] {
   letter-spacing: 1px;
 }

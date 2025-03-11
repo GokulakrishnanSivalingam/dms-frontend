@@ -1,11 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Header from './components/Header'
 import Chatbot from './components/Chatbot'
 
 import './App.css'
 
 const App = () => {
+  const navigate = useNavigate();
+
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
+
   const disasterInfo = [
     {
       id: 1,
@@ -48,8 +54,8 @@ const App = () => {
               <h1>Emergency Response System</h1>
               <p>Quick and efficient disaster management solutions for immediate assistance during emergencies. We're here to help 24/7.</p>
               <div className="hero-buttons">
-                <Link to="/emergency" className="primary-btn">Learn More</Link>
-                <Link to="/emergency" className="secondary-btn">Emergency Call</Link>
+                <button onClick={() => handleNavigation('/emergency')} className="primary-btn">Learn More</button>
+                <button onClick={() => handleNavigation('/emergency')} className="secondary-btn">Emergency Call</button>
               </div>
             </div>
             <div className="hero-image">
@@ -77,7 +83,12 @@ const App = () => {
                       ))}
                     </ul>
                   </div>
-                  <Link to="/emergency" className="card-button">Get Help</Link>
+                  <button 
+                    onClick={() => handleNavigation('/emergency')} 
+                    className="card-button"
+                  >
+                    Get Help
+                  </button>
                 </div>
               ))}
             </div>

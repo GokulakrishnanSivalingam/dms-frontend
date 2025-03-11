@@ -3,7 +3,7 @@
 *{
   font-family: 'Poppins', sans-serif;
 }
-.navbar {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,14 +19,15 @@
   height: 60px;
 }
 
-.navbar:hover {
+.header:hover {
   background: rgba(255, 255, 255, 1);
 }
 
-.nav-brand {
+.logo {
   display: flex;
   align-items: center;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .logo-text {
@@ -62,6 +63,9 @@
   transition: all 0.3s ease;
   position: relative;
   letter-spacing: 0.3px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .nav-link::after {
@@ -119,7 +123,7 @@
 }
 
 @media (max-width: 768px) {
-  .navbar {
+  .header {
     padding: 0 1rem;
     height: 60px;
   }
@@ -153,15 +157,24 @@
   .nav-menu {
     position: fixed;
     left: -100%;
-    top: 45px;
+    top: 60px;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.98);
     width: 100%;
     text-align: center;
     transition: 0.4s ease-in-out;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 1rem 0;
     backdrop-filter: blur(10px);
+    background-color: white;
+  }
+
+  .nav-menu button {
+    position: relative;
+    left: 0;
+    width: auto;
+    margin: 0.5rem auto;
+    background: none;
+    border: none;
   }
 
   .nav-menu.active {

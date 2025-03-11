@@ -14,6 +14,8 @@ const Chatbot = () => {
   ]);
   const [inputMessage, setInputMessage] = useState('');
   const messagesEndRef = useRef(null);
+  const [adminClickCount, setAdminClickCount] = useState(0);
+  const [showAdminLink, setShowAdminLink] = useState(false);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -158,6 +160,18 @@ const Chatbot = () => {
   };
 
   const handleBack = () => {
+    setAdminClickCount(prev => {
+      const newCount = prev + 1;
+      if (newCount >= 5) {
+        setShowAdminLink(true);
+        setTimeout(() => {
+          setShowAdminLink(false);
+          setAdminClickCount(0);
+        }, 3000);
+      }
+      return newCount;
+    });
+
     const messagesContainer = document.querySelector('.messages-container');
     messagesContainer.classList.add('resetting');
     
@@ -172,11 +186,17 @@ const Chatbot = () => {
     }, 300);
   };
 
+  const handleAdminAccess = () => {
+    navigate('/admin');
+  };
+
   return (
     <div className="chatbot-container">
       {!isOpen && (
         <button className="chatbot-toggle" onClick={() => setIsOpen(true)}>
-       <div className="icons">  <RiMessage2Fill size={23} /></div> 
+          <div className="icons">
+            <RiMessage2Fill size={23} />
+          </div>
         </button>
       )}
 
@@ -199,6 +219,33 @@ const Chatbot = () => {
               <IoClose size={20} />
             </button>
           </div>
+
+          {showAdminLink && (
+            <div 
+              onClick={handleAdminAccess}
+              style={{
+                position: 'absolute',
+                top: '60px',
+                right: '10px',
+                zIndex: 1000,
+                background: '#2c3e50',
+                padding: '8px 16px',
+                borderRadius: '4px',
+                animation: 'fadeIn 0.3s ease-in-out',
+                cursor: 'pointer'
+              }}
+            >
+              <span 
+                style={{
+                  color: 'white',
+                  textDecoration: 'none',
+                  fontSize: '14px'
+                }}
+              >
+                Admin Access
+              </span>
+            </div>
+          )}
 
           <div className="messages-container">
             {messages.map((message, index) => (
@@ -225,7 +272,9 @@ const Chatbot = () => {
               placeholder="Type your message..."
             />
             <button type="submit">
-             <div className="icon1"> <IoSend size={20} /></div>
+              <div className="icon1">
+                <IoSend size={20} />
+              </div>
             </button>
           </form>
         </div>

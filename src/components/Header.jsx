@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [user, setUser] = useState(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const userData = localStorage.getItem('user');
@@ -13,6 +13,11 @@ const Header = () => {
       setUser(JSON.parse(userData));
     }
   }, []);
+
+  const handleNavigation = (path) => {
+    navigate(path);
+    setIsOpen(false); // Close mobile menu after navigation
+  };
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -25,31 +30,31 @@ const Header = () => {
   };
 
   return (
-    <nav className="navbar">
-      <Link to="/" className="nav-brand">
+    <header className="header">
+      <div className="logo" onClick={() => handleNavigation('/')}>
         <div className="logo-text">
           D<span>MS</span>
         </div>
-      </Link>
+      </div>
       
       <div className={`nav-menu ${isOpen ? 'active' : ''}`}>
-        <Link to="/" className="nav-link">Home</Link>
-        <Link to="/about" className="nav-link">About</Link>
-        <Link to="/emergency" className="nav-link">Emergency</Link>
-        <Link to="/live-track" className="nav-link">Live Track</Link>
+        <button onClick={() => handleNavigation('/')} className="nav-link">Home</button>
+        <button onClick={() => handleNavigation('/about')} className="nav-link">About</button>
+        <button onClick={() => handleNavigation('/emergency')} className="nav-link">Emergency</button>
+        <button onClick={() => handleNavigation('/live-track')} className="nav-link">Live Track</button>
         {user ? (
           <>
-            <Link to="/profile" className="nav-link">
+            <button onClick={() => handleNavigation('/profile')} className="nav-link">
               <i className="fas fa-user"></i> {user.name}
-            </Link>
+            </button>
             <button onClick={handleLogout} className="nav-link logout-link">
               <i className="fas fa-sign-out-alt"></i> Logout
             </button>
           </>
         ) : (
           <>
-            <Link to="/login" className="nav-link">Login</Link>
-            <Link to="/signup" className="nav-link">Signup</Link>
+            <button onClick={() => handleNavigation('/login')} className="nav-link">Login</button>
+            <button onClick={() => handleNavigation('/signup')} className="nav-link">Signup</button>
           </>
         )}
       </div>
@@ -59,7 +64,7 @@ const Header = () => {
         <span className="bar"></span>
         <span className="bar"></span>
       </div>
-    </nav>
+    </header>
   );
 };
 
