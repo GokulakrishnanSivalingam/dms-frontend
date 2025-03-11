@@ -20,7 +20,7 @@ const Admin = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/admin/users');
+      const response = await fetch('https://dms-server-1-kfqk.onrender.com/api/admin/users');
       const data = await response.json();
       if (response.ok) {
         setUsers(data.users);
@@ -47,7 +47,7 @@ const Admin = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/admin/send-alert', {
+      const response = await fetch('https://dms-server-1-kfqk.onrender.com/api/admin/send-alert', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
