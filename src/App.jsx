@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Header from './components/Header'
 import Chatbot from './components/Chatbot'
-import LearnMore from './pages/LearnMore'
-
 import './App.css'
 
 const App = () => {
