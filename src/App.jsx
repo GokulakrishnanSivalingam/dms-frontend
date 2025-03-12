@@ -240,19 +240,19 @@ const App = () => {
               <div className="contact-card">
                 <div className="contact-icon">📞</div>
                 <h3>Emergency Hotline</h3>
-                <a href="tel:911" className="phone-number">911</a>
+                <a href="tel:911" className="phone-number">112</a>
                 <p>Available 24/7</p>
               </div>
               <div className="contact-card">
                 <div className="contact-icon">🚑</div>
                 <h3>Ambulance</h3>
-                <a href="tel:102" className="phone-number">102</a>
+                <a href="tel:102" className="phone-number">108</a>
                 <p>Medical Emergency</p>
               </div>
               <div className="contact-card">
                 <div className="contact-icon">🚒</div>
                 <h3>Fire Brigade</h3>
-                <a href="tel:101" className="phone-number">101</a>
+                <a href="tel:101" className="phone-number">102</a>
                 <p>Fire Emergency</p>
               </div>
             </div>
@@ -263,7 +263,7 @@ const App = () => {
           <div className="container">
             <p>&copy; 2024 Disaster Management System. All rights reserved.</p>
             <div className="emergency-footer">
-              <p>For Emergencies: <a href="tel:911">911</a></p>
+              <p>For Emergencies: <a href="tel:112">112</a></p>
             </div>
           </div>
         </footer>

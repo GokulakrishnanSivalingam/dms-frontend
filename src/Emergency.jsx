@@ -29,7 +29,7 @@ function Emergency () {
         <div className="emergency-contacts">
           <div className="contact-card">
             <h3>Emergency Hotline</h3>
-            <a href="tel:911" className="phone-number">911</a>
+            <a href="tel:112" className="phone-number">112</a>
           </div>
         </div>
       </div>
