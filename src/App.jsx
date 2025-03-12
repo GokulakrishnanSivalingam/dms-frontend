@@ -15,31 +15,24 @@ const App = () => {
 
   const fetchNews = async () => {
     try {
-      const response = await fetch(
-        'https://newsapi.org/v2/everything?' +
-        'q=(natural disaster OR earthquake OR flood OR hurricane OR tsunami OR wildfire OR emergency)&' +
-        'language=en&' +
-        'sortBy=relevancy&' +
-        'pageSize=6&' +
-        'apiKey=79316c41264f41deaf480bbc126e3254'
-      );
+      const response = await fetch("https://dms-server-1-kfqk.onrender.com/api/news"); 
       const data = await response.json();
       
       const disasterNews = data.articles.filter(article => {
         const keywords = [
-          'disaster', 'emergency', 'earthquake', 'flood', 'hurricane',
-          'tsunami', 'wildfire', 'evacuation', 'rescue', 'catastrophe',
-          'storm', 'cyclone', 'landslide', 'drought', 'volcanic'
+          "India","disaster", "emergency", "earthquake", "flood", "hurricane",
+          "tsunami", "wildfire", "evacuation", "rescue", "catastrophe",
+          "storm", "cyclone", "landslide", "drought", "volcanic"
         ];
-        
-        const content = (article.title + ' ' + article.description).toLowerCase();
+  
+        const content = (article.title + " " + article.description).toLowerCase();
         return keywords.some(keyword => content.includes(keyword));
       });
-
+  
       setNews(disasterNews.slice(0, 6));
       setLoading(false);
     } catch (error) {
-      console.error('Error fetching news:', error);
+      console.error("Error fetching news:", error);
       setLoading(false);
     }
   };
