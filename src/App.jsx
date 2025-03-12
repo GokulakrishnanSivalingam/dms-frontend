@@ -1,12 +1,53 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Header from './components/Header'
 import Chatbot from './components/Chatbot'
+import LearnMore from './pages/LearnMore'
+import translateText from './utils/translateAPI'
 
 import './App.css'
 
 const App = () => {
   const navigate = useNavigate();
+  const [news, setNews] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [language, setLanguage] = useState('en');
+  const [translations, setTranslations] = useState({});
+
+  useEffect(() => {
+    fetchNews();
+  }, []);
+
+  const fetchNews = async () => {
+    try {
+      const response = await fetch(
+        'https://newsapi.org/v2/everything?' +
+        'q=(natural disaster OR earthquake OR flood OR hurricane OR tsunami OR wildfire OR emergency)&' +
+        'language=en&' +
+        'sortBy=relevancy&' +
+        'pageSize=6&' +
+        'apiKey=79316c41264f41deaf480bbc126e3254'
+      );
+      const data = await response.json();
+      
+      const disasterNews = data.articles.filter(article => {
+        const keywords = [
+          ,'india','disaster', 'emergency', 'earthquake', 'flood', 'hurricane',
+          'tsunami', 'wildfire', 'evacuation', 'rescue', 'catastrophe',
+          'storm', 'cyclone', 'landslide', 'drought', 'volcanic'
+        ];
+        
+        const content = (article.title + ' ' + article.description).toLowerCase();
+        return keywords.some(keyword => content.includes(keyword));
+      });
+
+      setNews(disasterNews.slice(0, 6));
+      setLoading(false);
+    } catch (error) {
+      console.error('Error fetching news:', error);
+      setLoading(false);
+    }
+  };
 
   const handleNavigation = (path) => {
     navigate(path);
@@ -44,18 +85,72 @@ const App = () => {
     }
   ];
 
+  // Function to translate content
+  const translateContent = async () => {
+    try {
+      const contentToTranslate = {
+        heroTitle: 'Emergency Response System',
+        heroDescription: 'Quick and efficient disaster management solutions for immediate assistance during emergencies. We\'re here to help 24/7.',
+        learnMore: 'Learn More',
+        emergencyCall: 'Emergency Call',
+        // Add other text content that needs translation
+      };
+
+      if (language === 'ta') {
+        const translatedContent = {};
+        for (const [key, value] of Object.entries(contentToTranslate)) {
+          translatedContent[key] = await translateText(value, 'ta');
+        }
+        setTranslations(translatedContent);
+      } else {
+        setTranslations(contentToTranslate); // Use original English content
+      }
+    } catch (error) {
+      console.error('Translation error:', error);
+    }
+  };
+
+  // Trigger translation when language changes
+  useEffect(() => {
+    translateContent();
+  }, [language]);
+
+  // Add language selector in your header or navigation
+  const LanguageSelector = () => (
+    <div className="language-selector">
+      <button 
+        className={`lang-btn ${language === 'en' ? 'active' : ''}`}
+        onClick={() => setLanguage('en')}
+      >
+        English
+      </button>
+      <button 
+        className={`lang-btn ${language === 'ta' ? 'active' : ''}`}
+        onClick={() => setLanguage('ta')}
+      >
+        தமிழ்
+      </button>
+    </div>
+  );
+
   return (
     <div className="app">
-      <Header />
+      <Header>
+        <LanguageSelector />
+      </Header>
       <main>
         <section className="hero">
           <div className="hero-split">
             <div className="hero-content">
-              <h1>Emergency Response System</h1>
-              <p>Quick and efficient disaster management solutions for immediate assistance during emergencies. We're here to help 24/7.</p>
+              <h1>{translations.heroTitle || 'Emergency Response System'}</h1>
+              <p>{translations.heroDescription || 'Quick and efficient disaster management solutions...'}</p>
               <div className="hero-buttons">
-                <button onClick={() => handleNavigation('/emergency')} className="primary-btn">Learn More</button>
-                <button onClick={() => handleNavigation('/emergency')} className="secondary-btn">Emergency Call</button>
+                <button onClick={() => handleNavigation('/learn-more')} className="primary-btn">
+                  {translations.learnMore || 'Learn More'}
+                </button>
+                <button onClick={() => handleNavigation('/emergency')} className="secondary-btn">
+                  {translations.emergencyCall || 'Emergency Call'}
+                </button>
               </div>
             </div>
             <div className="hero-image">
@@ -64,7 +159,51 @@ const App = () => {
           </div>
         </section>
 
-        <section className="disaster-info-section">
+        
+
+        {/* New News Section */}
+        <section className="news-section">
+          <div className="container">
+            <h2>Latest Emergency News</h2>
+            <p className="section-description">Stay informed about recent disasters and emergency situations</p>
+            
+            <div className="news-grid">
+              {loading ? (
+                <div className="loading">Loading news...</div>
+              ) : (
+                news.map((article, index) => (
+                  <div key={index} className="news-card">
+                    <div className="news-image">
+                      <img 
+                        src={article.urlToImage || 'default-news-image.jpg'} 
+                        alt={article.title}
+                        onError={(e) => {
+                          e.target.src = 'https://via.placeholder.com/300x200?text=News';
+                        }}
+                      />
+                    </div>
+                    <div className="news-content">
+                      <h3>{article.title}</h3>
+                      <p>{article.description}</p>
+                      <div className="news-meta">
+                        <span>{new Date(article.publishedAt).toLocaleDateString()}</span>
+                        <a 
+                          href={article.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="read-more"
+                        >
+                          Read More
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
+        </section>
+<section className="disaster-info-section">
           <div className="container">
             <h2>Disaster Information Center</h2>
             <p className="section-description">Stay informed and prepared for various types of emergencies</p>
@@ -94,7 +233,6 @@ const App = () => {
             </div>
           </div>
         </section>
-
         <section className="emergency-contact">
           <div className="container">
             <h2>Emergency Contacts</h2>

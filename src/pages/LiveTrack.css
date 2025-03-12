@@ -179,4 +179,6 @@
     .forecast-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-} 
+}   .forecast-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }

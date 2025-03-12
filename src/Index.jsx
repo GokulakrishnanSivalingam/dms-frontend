@@ -8,6 +8,7 @@ import About from './pages/About';
 import LiveTrack from './pages/LiveTrack';
 import Admin from './Admin';
 import Profile from './pages/Profile';
+import LearnMore from './pages/LearnMore';
 
 const Index = () =>{
     return (
@@ -21,6 +22,7 @@ const Index = () =>{
         <Route path="/live-track" element={<LiveTrack />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/learn-more" element={<LearnMore />} />
       </Routes>
     </BrowserRouter>
     );
