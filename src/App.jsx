@@ -11,7 +11,6 @@ const App = () => {
   const navigate = useNavigate();
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [language, setLanguage] = useState('en');
   const [translations, setTranslations] = useState({});
 
   useEffect(() => {
