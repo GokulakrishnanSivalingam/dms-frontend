@@ -27,7 +27,7 @@ const App = () => {
       
       const disasterNews = data.articles.filter(article => {
         const keywords = [
-          ,'india','disaster', 'emergency', 'earthquake', 'flood', 'hurricane',
+          'disaster', 'emergency', 'earthquake', 'flood', 'hurricane',
           'tsunami', 'wildfire', 'evacuation', 'rescue', 'catastrophe',
           'storm', 'cyclone', 'landslide', 'drought', 'volcanic'
         ];
@@ -71,13 +71,7 @@ const App = () => {
       tips: ['Stay indoors', 'Keep emergency kit ready', 'Follow evacuation orders']
     },
    
-    {
-      id: 4,
-      icon: '🌍',
-      title: 'Earthquake Emergency',
-      description: 'Rapid response and rescue operations for earthquake-affected areas.',
-      tips: ['Drop, cover, and hold on', 'Stay away from windows', 'Move to open spaces after shaking stops']
-    }
+  
   ];
 
   return (
