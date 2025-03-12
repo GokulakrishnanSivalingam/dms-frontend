@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import Header from './components/Header'
 import Chatbot from './components/Chatbot'
 import LearnMore from './pages/LearnMore'
-import translateText from './utils/translateAPI'
 
 import './App.css'
 
@@ -11,7 +10,6 @@ const App = () => {
   const navigate = useNavigate();
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [translations, setTranslations] = useState({});
 
   useEffect(() => {
     fetchNews();
@@ -84,71 +82,21 @@ const App = () => {
     }
   ];
 
-  // Function to translate content
-  const translateContent = async () => {
-    try {
-      const contentToTranslate = {
-        heroTitle: 'Emergency Response System',
-        heroDescription: 'Quick and efficient disaster management solutions for immediate assistance during emergencies. We\'re here to help 24/7.',
-        learnMore: 'Learn More',
-        emergencyCall: 'Emergency Call',
-        // Add other text content that needs translation
-      };
-
-      if (language === 'ta') {
-        const translatedContent = {};
-        for (const [key, value] of Object.entries(contentToTranslate)) {
-          translatedContent[key] = await translateText(value, 'ta');
-        }
-        setTranslations(translatedContent);
-      } else {
-        setTranslations(contentToTranslate); // Use original English content
-      }
-    } catch (error) {
-      console.error('Translation error:', error);
-    }
-  };
-
-  // Trigger translation when language changes
-  useEffect(() => {
-    translateContent();
-  }, [language]);
-
-  // Add language selector in your header or navigation
-  const LanguageSelector = () => (
-    <div className="language-selector">
-      <button 
-        className={`lang-btn ${language === 'en' ? 'active' : ''}`}
-        onClick={() => setLanguage('en')}
-      >
-        English
-      </button>
-      <button 
-        className={`lang-btn ${language === 'ta' ? 'active' : ''}`}
-        onClick={() => setLanguage('ta')}
-      >
-        தமிழ்
-      </button>
-    </div>
-  );
-
   return (
     <div className="app">
-      <Header>
-        <LanguageSelector />
-      </Header>
+      <Header />
       <main>
         <section className="hero">
           <div className="hero-split">
             <div className="hero-content">
-              <h1>{translations.heroTitle || 'Emergency Response System'}</h1>
-              <p>{translations.heroDescription || 'Quick and efficient disaster management solutions...'}</p>
+              <h1>Emergency Response System</h1>
+              <p>Quick and efficient disaster management solutions for immediate assistance during emergencies. We're here to help 24/7.</p>
               <div className="hero-buttons">
                 <button onClick={() => handleNavigation('/learn-more')} className="primary-btn">
-                  {translations.learnMore || 'Learn More'}
+                  Learn More
                 </button>
                 <button onClick={() => handleNavigation('/emergency')} className="secondary-btn">
-                  {translations.emergencyCall || 'Emergency Call'}
+                  Emergency Call
                 </button>
               </div>
             </div>
@@ -239,19 +187,19 @@ const App = () => {
               <div className="contact-card">
                 <div className="contact-icon">📞</div>
                 <h3>Emergency Hotline</h3>
-                <a href="tel:911" className="phone-number">112</a>
+                <a href="tel:112" className="phone-number">112</a>
                 <p>Available 24/7</p>
               </div>
               <div className="contact-card">
                 <div className="contact-icon">🚑</div>
                 <h3>Ambulance</h3>
-                <a href="tel:102" className="phone-number">108</a>
+                <a href="tel:108" className="phone-number">108</a>
                 <p>Medical Emergency</p>
               </div>
               <div className="contact-card">
                 <div className="contact-icon">🚒</div>
                 <h3>Fire Brigade</h3>
-                <a href="tel:101" className="phone-number">102</a>
+                <a href="tel:102" className="phone-number">102</a>
                 <p>Fire Emergency</p>
               </div>
             </div>
