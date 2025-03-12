@@ -8,6 +8,7 @@ import Login from './Login';
 import Signup from './Signup';
 import Profile from './pages/Profile';
 import Admin from './Admin';
+import LearnMore from './pages/LearnMore';
 
 const Index = () => {
   return (
@@ -20,6 +21,8 @@ const Index = () => {
       <Route path="/signup" element={<Signup />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/admin" element={<Admin />} />
+      <Route path="/learn-more" element={<LearnMore />} />
+      
       {/* Add other routes here */}
     </Routes>
   );

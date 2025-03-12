@@ -18,7 +18,11 @@
   font-family: 'Poppins', sans-serif;
   height: 60px;
 }
-
+.h-icons
+{
+  font-size: 12px;
+  
+}
 .header:hover {
   background: rgba(255, 255, 255, 1);
 }

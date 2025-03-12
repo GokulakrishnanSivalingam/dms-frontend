@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Header.css';
+import { LuLogOut } from "react-icons/lu";
+import { FaUserCircle } from "react-icons/fa";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -16,7 +18,7 @@ const Header = () => {
 
   const handleNavigation = (path) => {
     navigate(path);
-    setIsOpen(false); // Close mobile menu after navigation
+    setIsOpen(false); 
   };
 
   const toggleMenu = () => {
@@ -40,15 +42,15 @@ const Header = () => {
       <div className={`nav-menu ${isOpen ? 'active' : ''}`}>
         <button onClick={() => handleNavigation('/')} className="nav-link">Home</button>
         <button onClick={() => handleNavigation('/about')} className="nav-link">About</button>
-        <button onClick={() => handleNavigation('/emergency')} className="nav-link">Emergency</button>
+      
         <button onClick={() => handleNavigation('/live-track')} className="nav-link">Live Track</button>
         {user ? (
           <>
             <button onClick={() => handleNavigation('/profile')} className="nav-link">
-              <i className="fas fa-user"></i> {user.name}
+            <FaUserCircle/>   {user.name}
             </button>
             <button onClick={handleLogout} className="nav-link logout-link">
-              <i className="fas fa-sign-out-alt"></i> Logout
+           <LuLogOut/>  Logout
             </button>
           </>
         ) : (
