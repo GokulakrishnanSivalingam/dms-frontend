@@ -192,13 +192,26 @@ const App = () => {
         </section>
 
         <footer className="footer">
-          <div className="container">
-            <p>&copy; 2024 Disaster Management System. All rights reserved.</p>
-            <div className="emergency-footer">
-              <p>For Emergencies: <a href="tel:112">112</a></p>
-            </div>
-          </div>
-        </footer>
+  <div className="container">
+    <p>&copy; 2025 Disaster Management System. All rights reserved.</p>
+    
+    <div className="social-links">
+      <a href="https://www.instagram.com/crisiz2025?igsh=a3kwamV1ZzVnNTlt" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter (X)" />
+      </a>
+    </div>
+
+    <div className="emergency-footer">
+      <p>For Emergencies: <a href="tel:112">112</a></p>
+    </div>
+  </div>
+</footer>
       </main>
       <Chatbot />
     </div>

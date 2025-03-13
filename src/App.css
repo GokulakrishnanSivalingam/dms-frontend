@@ -17,6 +17,7 @@ body {
     height: 450px;
 }
 
+
 .app {
     min-height: 100vh;
     background-color: var(--background-color);
@@ -576,6 +577,29 @@ button:hover, a:hover {
     text-decoration: none;
     font-weight: bold;
     animation: pulse 2s infinite;
+}
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 10px 0;
+    background-color: none;
+
+  }
+  
+  .social-links a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    background-color: none;
+  }
+  
+  .social-links a img:hover {
+    transform: scale(1.1);
+    opacity:0.8;
+    
+    
 }
 
 @keyframes pulse {
