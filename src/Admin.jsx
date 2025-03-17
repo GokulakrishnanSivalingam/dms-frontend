@@ -32,7 +32,7 @@ const Admin = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (password === 'saravedi') {
+    if (password === 'vec@777') {
       setIsAuthenticated(true);
       showAlert('success', 'Login successful');
     } else {
