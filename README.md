@@ -34,7 +34,8 @@
 
 ## 📊 Tech Stack Distribution
 
-![Tech Stack Pie Chart](https://quickchart.io/chart?c=%7B%22type%22%3A%22pie%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22React%22%2C%22CSS%22%2C%22Node.js%22%2C%22Express.js%22%2C%22MongoDB%22%2C%22Twilio%20API%22%5D%2C%22datasets%22%3A%5B%7B%22data%22%3A%5B25%2C15%2C20%2C10%2C20%2C10%5D%7D%5D%7D%7D)
+![Tech Stack Pie Chart](https://quickchart.io/chart?c=%7B%22type%22%3A%22pie%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22React%22%2C%22CSS%22%2C%22Node.js%22%2C%22Express.js%22%2C%22MongoDB%22%2C%22Twilio%20API%22%5D%2C%22datasets%22%3A%5B%7B%22data%22%3A%5B25%2C15%2C20%2C10%2C20%2C10%5D%2C%22backgroundColor%22%3A%5B%22%2348CAE4%22%2C%22%23F7B801%22%2C%22%2328A745%22%2C%22%236C757D%22%2C%22%2328B463%22%2C%22%23E63946%22%5D%7D%5D%7D%7D)
+
 
 
 - **Frontend:** React.js, Tailwind CSS
