@@ -57,8 +57,8 @@
 ### Steps:
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/crisiz.git
-   cd crisiz
+   git clone https://github.com/GokulakrishnanSivalingam/dms-frontend.git
+   cd dms-frontend
    ```
 2. **Install Dependencies:**
    ```bash
