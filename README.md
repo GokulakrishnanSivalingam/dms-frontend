@@ -4,6 +4,22 @@
 
 ---
 
+## 🌟 Key Features
+
+✅ **Instant WhatsApp Emergency Alerts** – Faster, more reliable communication.
+✅ **Live Disaster Tracking & Heatmaps** – Real-time insights for better decision-making.
+✅ **AI-Powered Chatbot Assistance** – Quick guidance and information at your fingertips.
+✅ **Comprehensive Weather Forecasts** – Stay ahead of storms, floods, and other crises.
+✅ **Real-Time Data Integration** – Access up-to-date information from verified sources.
+✅ **User-Friendly Dashboard** – Intuitive and easy-to-use interface for quick navigation.
+✅ **Emergency Contact Directory** – Connect instantly with local authorities and relief agencies.
+✅ **Offline Mode Support** – Stay informed even in low-connectivity areas.
+✅ **Community Engagement Tools** – Users can report incidents and request assistance in real-time.
+✅ **Multilingual Support** – Breaking language barriers for wider accessibility.
+
+---
+
+
 ## 🖥️ Tech Stack Overview
 
 ![React](https://img.shields.io/badge/Frontend-React-blue?style=for-the-badge&logo=react) 
@@ -29,20 +45,6 @@
 
 ---
 
-## 🌟 Key Features
-
-✅ **Instant WhatsApp Emergency Alerts** – Faster, more reliable communication.
-✅ **Live Disaster Tracking & Heatmaps** – Real-time insights for better decision-making.
-✅ **AI-Powered Chatbot Assistance** – Quick guidance and information at your fingertips.
-✅ **Comprehensive Weather Forecasts** – Stay ahead of storms, floods, and other crises.
-✅ **Real-Time Data Integration** – Access up-to-date information from verified sources.
-✅ **User-Friendly Dashboard** – Intuitive and easy-to-use interface for quick navigation.
-✅ **Emergency Contact Directory** – Connect instantly with local authorities and relief agencies.
-✅ **Offline Mode Support** – Stay informed even in low-connectivity areas.
-✅ **Community Engagement Tools** – Users can report incidents and request assistance in real-time.
-✅ **Multilingual Support** – Breaking language barriers for wider accessibility.
-
----
 
 ## 🔧 Installation & Setup
 
