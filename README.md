@@ -3,6 +3,19 @@
 🚨 **When disaster strikes, every second matters.** That's why we built **Crisiz** – a cutting-edge platform designed to keep you ahead of emergencies.
 
 ---
+## 🖥️ Tech Stack Overview
+
+| Category       | Technology     | Badge |
+|----------------|----------------|--------|
+| **Frontend**   | React          | ![React](https://img.shields.io/badge/Frontend-React-blue?style=for-the-badge&logo=react) |
+| **Styling**    | CSS            | ![CSS](https://img.shields.io/badge/Styling-CSS-blue?style=for-the-badge&logo=css3) |
+| **Backend**    | Node.js        | ![Node.js](https://img.shields.io/badge/Backend-Node.js-green?style=for-the-badge&logo=node.js) |
+| **Server**     | Express.js     | ![Express.js](https://img.shields.io/badge/Server-Express.js-lightgrey?style=for-the-badge&logo=express) |
+| **Database**   | MongoDB        | ![MongoDB](https://img.shields.io/badge/Database-MongoDB-brightgreen?style=for-the-badge&logo=mongodb) |
+| **Hosting**    | Vercel         | ![Vercel](https://img.shields.io/badge/Hosting-Vercel-black?style=for-the-badge&logo=vercel) |
+| **API**        | Twilio API     | ![Twilio API](https://img.shields.io/badge/API-Twilio-red?style=for-the-badge&logo=twilio) |
+
+---
 
 ## 🌟 Key Features
 
@@ -10,27 +23,14 @@
 ✅ **Live Disaster Tracking & Heatmaps** – Real-time insights for better decision-making.<br>
 ✅ **AI-Powered Chatbot Assistance** – Quick guidance and information at your fingertips.<br>
 ✅ **Comprehensive Weather Forecasts** – Stay ahead of storms, floods, and other crises.<br>
-✅ **Real-Time Data Integration** – Access up-to-date information from verified sources.<br>
 ✅ **User-Friendly Dashboard** – Intuitive and easy-to-use interface for quick navigation.<br>
 ✅ **Emergency Contact Directory** – Connect instantly with local authorities and relief agencies.<br>
-✅ **Offline Mode Support** – Stay informed even in low-connectivity areas.<br>
 ✅ **Community Engagement Tools** – Users can report incidents and request assistance in real-time.<br>
-✅ **Multilingual Support** – Breaking language barriers for wider accessibility.<br>
+
 
 ---
 
 
-## 🖥️ Tech Stack Overview
-
-![React](https://img.shields.io/badge/Frontend-React-blue?style=for-the-badge&logo=react) 
-![CSS](https://img.shields.io/badge/Styling-CSS-blue?style=for-the-badge&logo=css3) 
-![Node.js](https://img.shields.io/badge/Backend-Node.js-green?style=for-the-badge&logo=node.js) 
-![Express.js](https://img.shields.io/badge/Server-Express.js-lightgrey?style=for-the-badge&logo=express) 
-![MongoDB](https://img.shields.io/badge/Database-MongoDB-brightgreen?style=for-the-badge&logo=mongodb) 
-![Vercel](https://img.shields.io/badge/Hosting-Vercel-black?style=for-the-badge&logo=vercel) 
-![Twilio API](https://img.shields.io/badge/API-Twilio-red?style=for-the-badge&logo=twilio) 
-
----
 
 ## 📊 Tech Stack Distribution
 
