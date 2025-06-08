@@ -29,7 +29,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await fetch('https://dms-server-1-kfqk.onrender.com/api/auth/signup', {
+      const response = await fetch('https://dms-server-production.up.railway.app/api/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
