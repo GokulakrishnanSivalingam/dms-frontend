@@ -20,7 +20,7 @@ const Admin = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch('https://dms-server-production.up.railway.app/api/admin/users');
+      const response = await fetch('https://dms-server-1-kfqk.onrender.com/api/admin/users');
       const data = await response.json();
       if (response.ok) {
         setUsers(data.users);
